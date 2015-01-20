@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#define USR_PWD_LEN 10
+#define USR_NAME_LEN 20
+typedef  int USR_ROLE;
 typedef struct usr_account_tag
 {
 	char usr_name[USR_NAME_LEN];
@@ -12,6 +15,12 @@ typedef struct usr_account_tag
 
 }USR_ACCOUNT,*pUSR_ACCOUNT;
 
+typedef struct stu_INFO_TAG
+{
+	int m_id;
+	char m_name[USR_NAME_LEN]
+
+};
 
 
 #endif
