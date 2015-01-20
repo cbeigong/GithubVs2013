@@ -18,10 +18,22 @@
     <ClCompile Include="main.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="_sims.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stu_info.h">
+    <ClInclude Include="_SIMS.h">
       <Filter>头文件</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="usr_account.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="usr_info.txt" />
+    <Text Include="configure.txt">
+      <Filter>资源文件</Filter>
+    </Text>
   </ItemGroup>
 </Project>
