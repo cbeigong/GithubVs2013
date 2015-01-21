@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 							  fflush(stdout);
 							  fflush(stdin);
 							  scanf("%d", &search_id);
-							//  search_usr_infor_by_id(pUsr_Infor,search_id);
+							  search_usr_info_by_id(stu_list,search_id);
 							  getchar();
 							  getchar();
 						  }
@@ -46,13 +46,13 @@ int main(int argc, char* argv[])
 							  fflush(stdin);
 							  //??????
 							  scanf("%s", search_name);
-							  //search_usr_info_by_name(pUsr _Info, search_name);
+							  search_usr_info_by_name(stu_list, search_name);
 							  getchar();
 							  getchar();
 						  }
 						  else
 						  {
-							  //search_usr_info_by_id(pUsr _info, 0);
+							  search_usr_info_all(stu_list);
 							  getchar();
 							  getchar();
 						  }
@@ -66,7 +66,7 @@ int main(int argc, char* argv[])
 					  fflush(stdout);
 					  fflush(stdin);
 					  scanf("%d", &search_id);
-					  //update_usr_infor(pUsr_Infor,search_id);
+					  update_usr_info(stu_list,search_id);
 					  getchar();
 					  getchar();
 			}
@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
 					  //id 的输入 输出错误在delete 函数里面进行判断。
 					  if ((scanf("%d", &search_id)) == 1)
 					  {
-						 // delete_usr_infor(&pUsr_Infor, &usr_infor_num, search_id);
+						  delete_usr_info(&stu_list,/* &usr_info_num*/ search_id);
 						  getchar();
 						  getchar();
 					  }
@@ -95,7 +95,8 @@ int main(int argc, char* argv[])
 			}
 			case 4:
 			{
-					//  add_usr_infor(&pUsr_Infor, &usr_infor_num);
+					  system("cls");
+					  add_usr_info(&stu_list/*, &usr_infor_num*/);
 					  getchar();
 					  getchar();	
 			}
@@ -103,7 +104,7 @@ int main(int argc, char* argv[])
 			case 5:
 			{
 					  system("cls");
-					  printf("Enter search account: ");
+					  printf("Enter search account Name: ");
 					  //什么时候请stdout 社么时候清stdin
 					  fflush(stdout);
 					  memset(search_name, 0, sizeof(search_name));
@@ -112,7 +113,7 @@ int main(int argc, char* argv[])
 					  {
 						  fflush(stdin);
 						 // fflush(stdout);
-						///  search_usr_account(pUsr_Account, search_name); 
+						  search_usr_account(account_list, search_name); 
 					  }
 					  else
 					  {
@@ -129,9 +130,12 @@ int main(int argc, char* argv[])
 					  fflush(stdout);
 					  fflush(stdin);
 					  memset(search_name, 0, sizeof(search_name));
-					  //update_usr_account(pUsr_Account,search_name);
+					  scanf("%s", &search_name);
+					  update_usr_account(account_list, search_name);
+					  fflush(stdin);
 					  getchar();
 					  getchar();
+					  
 			}
 				break;
 			
@@ -139,12 +143,12 @@ int main(int argc, char* argv[])
 			{
 					  //每次输出到屏幕的时候就清一次屏幕：fflush(stdout)
 					  system("cls");
-					  printf("Enter delete account: ");
+					  printf("Enter delete account name: ");
 					  fflush(stdout);
 					  fflush(stdin);
 					  if (scanf("%s", search_name) == 1)
 					  {
-						 // delete_usr_account(&pUsr_Account, &usr_account_num, search_name);
+						  delete_usr_account(&account_list,/* &usr_account_num,*/ search_name);
 						  getchar();
 						  getchar();
 					  }
@@ -161,7 +165,7 @@ int main(int argc, char* argv[])
 			case 8:
 			{
 					  system("cls");
-					  //add_usr_account(&pUsr_Account,&usr_account_num);
+					  add_usr_account(&account_list /*,&usr_account_num*/);
 					  getchar();
 					  getchar();
 			}
@@ -182,7 +186,7 @@ int main(int argc, char* argv[])
 					fflush(stdout);
 					fflush(stdin);
 					scanf("%d", &search_id);
-					//  search_usr_infor_by_id(pUsr_Infor,search_id);
+					search_usr_info_by_id(stu_list, search_id);
 					getchar();
 					getchar();
 				}
@@ -194,7 +198,7 @@ int main(int argc, char* argv[])
 					fflush(stdin);
 					//??????
 					scanf("%s", search_name);
-					//search_usr_info_by_name(pUsr _Info, search_name);
+					search_usr_info_by_name(stu_list, search_name);
 					getchar();
 					getchar();
 				}
